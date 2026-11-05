@@ -2,7 +2,7 @@
   var root = document.documentElement;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // LaTeX
+  // LaTeX (if the KaTeX script could not load, hide the raw source instead of showing it)
   if (typeof renderMathInElement === "function") {
     renderMathInElement(document.body, {
       delimiters: [
@@ -11,6 +11,8 @@
       ],
       throwOnError: false
     });
+  } else {
+    root.classList.add("no-math");
   }
 
   document.getElementById("year").textContent = new Date().getFullYear();
