@@ -109,7 +109,8 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; background: l
 .projects article:hover { border-color: var(--accent); }
 .projects h4 { font-size: 18px; margin-bottom: 8px; }
 .projects p { margin: 0 0 12px; font-size: 15px; line-height: 1.65; }
-.projects .tex { color: var(--text); background: var(--bg); border-radius: 6px; padding: 8px 12px; overflow-x: auto; }
+.projects .tex { color: var(--text); background: var(--bg-alt); border: 1px solid var(--line); border-radius: 8px; padding: 0 12px; min-height: 72px; display: flex; align-items: center; justify-content: center; text-align: center; overflow-x: auto; margin: auto 0 16px; }
+.projects .tex + a { margin-top: 0; }
 .projects a { margin-top: auto; font-size: 15px; }
 
 /* live web apps */
