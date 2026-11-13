@@ -112,6 +112,20 @@ h2::after { content: ""; display: block; width: 44px; height: 3px; background: l
 .projects .tex { color: var(--text); background: var(--bg); border-radius: 6px; padding: 8px 12px; overflow-x: auto; }
 .projects a { margin-top: auto; font-size: 15px; }
 
+/* live web apps */
+.projects.apps { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.projects article.app { position: relative; padding: 0 0 22px; overflow: hidden; }
+.app img { display: block; width: 100%; height: auto; aspect-ratio: 1340 / 632; object-fit: cover; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+.app h4, .app p { margin-left: 24px; margin-right: 24px; }
+.app h4 a { color: var(--text); text-decoration: none; }
+.app h4 a.stretch::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.app h4 a:hover { color: var(--accent); }
+.app .stack { font-size: 13px; color: var(--muted); letter-spacing: .02em; }
+.app .visit { margin: auto 24px 0; font-weight: 600; color: var(--accent); }
+.projects article.app:hover { transform: translateY(-2px); transition: transform .2s, border-color .2s; }
+
+@media (prefers-reduced-motion: reduce) { .projects article.app:hover { transform: none; } }
+
 .contact { max-width: 720px; }
 .contact p { margin: 0 0 14px; }
 .contact .mail { font-size: clamp(18px, 3vw, 26px); font-weight: 700; margin-bottom: 26px; }
@@ -137,7 +151,7 @@ footer p { margin: 0; }
   .eq .katex-display { font-size: 1em; }
   .math { padding: 18px 16px 6px; }
   .sec { padding: 72px 0; }
-  .projects, .projects.two { grid-template-columns: 1fr; }
+  .projects, .projects.two, .projects.apps { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
